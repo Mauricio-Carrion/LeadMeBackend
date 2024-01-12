@@ -6,7 +6,7 @@ import (
 	"os"
 
 	"github.com/Mauricio-Carrion/LeadMeBackend/connection"
-	"github.com/Mauricio-Carrion/LeadMeBackend/models"
+	models "github.com/Mauricio-Carrion/LeadMeBackend/models/whatsmeow"
 	"github.com/gin-gonic/gin"
 	"github.com/mdp/qrterminal/v3"
 )
@@ -27,7 +27,7 @@ func ConnectClient(c *gin.Context) {
 			if evt.Event == "code" { 
 				qrterminal.GenerateHalfBlock(evt.Code, qrterminal.L, os.Stdout)
 				c.JSON(200, gin.H{
-					"QRcode": evt.Code,
+					"QR Code": evt.Code,
 				})
 				break
 			}

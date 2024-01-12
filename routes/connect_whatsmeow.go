@@ -1,7 +1,7 @@
 package routes
 
 import (
-	"github.com/Mauricio-Carrion/LeadMeBackend/controllers"
+	controllers "github.com/Mauricio-Carrion/LeadMeBackend/controllers/whatsmeow"
 	"github.com/gin-gonic/gin"
 )
 

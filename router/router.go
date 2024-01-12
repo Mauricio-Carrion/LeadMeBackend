@@ -13,5 +13,6 @@ func Router() {
 	router := gin.Default()
 	routes.Welcome(router)
 	routes.ConnectWhatsmeow(router)
+	routes.CreateUser(router)
 	router.Run(fmt.Sprintf(":%s", configs.GetServerPort()))
 }
