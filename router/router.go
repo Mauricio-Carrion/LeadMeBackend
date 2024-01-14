@@ -12,6 +12,7 @@ import (
 func Router() {
 	router := gin.Default()
 	routes.Welcome(router)
+	routes.Login(router)
 	routes.ConnectWhatsmeow(router)
 	routes.CreateUser(router)
 	routes.CreateCompanie(router)
