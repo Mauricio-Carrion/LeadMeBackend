@@ -14,5 +14,6 @@ func Router() {
 	routes.Welcome(router)
 	routes.ConnectWhatsmeow(router)
 	routes.CreateUser(router)
+	routes.CreateCompanie(router)
 	router.Run(fmt.Sprintf(":%s", configs.GetServerPort()))
 }

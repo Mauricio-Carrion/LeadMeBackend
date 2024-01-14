@@ -6,5 +6,5 @@ import (
 )
 
 func ConnectWhatsmeow(router *gin.Engine) {
-		router.GET("/connect", controllers.ConnectClient) 
+		router.GET("/connect_wp", controllers.ConnectClient) 
 }

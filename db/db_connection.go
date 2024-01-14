@@ -5,21 +5,31 @@ import (
 	"log"
 
 	"github.com/Mauricio-Carrion/LeadMeBackend/configs"
+	"github.com/google/uuid"
 	_ "github.com/lib/pq"
 
 	"gorm.io/driver/postgres"
 	"gorm.io/gorm"
 )
 
-
 type User struct {
-	gorm.Model
+	Uuid     uuid.UUID
 	Name     string
 	Email    string
 	Password string
 	Active   bool
 	IsAdmin  bool
 	Jid      string
+	Companie_uuid uuid.UUID
+	Companie Companie `gorm:"foreignKey:Companie_uuid"`
+}
+
+type Companie struct {
+	Uuid     uuid.UUID `gorm:"primaryKey"`
+	Name     string
+	Razao    string
+	Cpf_cnpj string
+	Active   bool
 }
 
 func DBConnection() *gorm.DB {
@@ -38,7 +48,8 @@ func DBConnection() *gorm.DB {
   }
 
 	db.AutoMigrate(
-		&User{}, 
+		&User{},
+		&Companie{}, 
 	)
 
 	return db

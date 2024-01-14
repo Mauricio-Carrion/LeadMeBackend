@@ -3,23 +3,21 @@ package routes
 import (
 	"net/http"
 
+	"github.com/Mauricio-Carrion/LeadMeBackend/controllers/companie"
 	"github.com/Mauricio-Carrion/LeadMeBackend/types"
-
-	"github.com/Mauricio-Carrion/LeadMeBackend/controllers/user"
 	"github.com/gin-gonic/gin"
 )
 
-
-func CreateUser(router *gin.Engine) {
-	router.POST("/user", func(ctx *gin.Context) {
-		var newUser types.NewUser
+func CreateCompanie(router *gin.Engine) {
+router.POST("/companie", func(ctx *gin.Context) {
+		var newCompanie types.NewCompanie
 		  
-		if err := ctx.ShouldBindJSON(&newUser); err != nil {
+		if err := ctx.ShouldBindJSON(&newCompanie); err != nil {
         ctx.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
         return
     }
 		
-		data, err := user.NewUserController(newUser)
+		data, err := companie.NewCompanieController(newCompanie)
 
 		if err != nil {
 			ctx.JSON(400, gin.H{
@@ -30,7 +28,7 @@ func CreateUser(router *gin.Engine) {
 		}
 
 		ctx.JSON(200, gin.H{
-			"message": "User created",
+			"message": "Companie created",
 			"data":    data,
 		})
 	})

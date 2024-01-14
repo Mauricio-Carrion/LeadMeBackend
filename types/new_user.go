@@ -1,5 +1,7 @@
 package types
 
+import "github.com/google/uuid"
+
 type NewUser struct {
 	Name string
 	Email string
@@ -7,4 +9,5 @@ type NewUser struct {
 	Password string
 	Active bool
 	IsAdmin bool
+	Companie_uuid uuid.UUID
 }
