@@ -3,6 +3,7 @@ package router
 import (
 	"fmt"
 
+	"github.com/Mauricio-Carrion/LeadMeBackend/auth"
 	"github.com/Mauricio-Carrion/LeadMeBackend/configs"
 
 	"github.com/Mauricio-Carrion/LeadMeBackend/routes"
@@ -11,8 +12,10 @@ import (
 
 func Router() {
 	router := gin.Default()
+	router.Use(gin.Logger())
 	routes.Welcome(router)
 	routes.Login(router)
+	router.Use(auth.AuthMiddleware())
 	routes.ConnectWhatsmeow(router)
 	routes.CreateUser(router)
 	routes.CreateCompanie(router)
