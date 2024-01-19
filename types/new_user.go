@@ -9,5 +9,6 @@ type NewUser struct {
 	Password string
 	Active bool
 	IsAdmin bool
+	Jid      string
 	Companie_uuid uuid.UUID
 }

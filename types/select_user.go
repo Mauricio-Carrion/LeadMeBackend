@@ -3,7 +3,7 @@ package types
 import "github.com/google/uuid"
 
 type SelectUser struct {
-	Uuid uuid.UUID
+	Uuid string
 	Name string
 	Email string
 	Active bool

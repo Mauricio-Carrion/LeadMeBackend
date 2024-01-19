@@ -10,7 +10,7 @@ import (
 func NewCompanieModel(newCompanie *types.NewCompanie) (*gorm.DB, error) {
 
 	result := db.DBConnection().Create(&db.Companie{
-		Uuid:     uuid.New(),
+		Uuid:     uuid.New().String(),
 		Name:     newCompanie.Name,
 		Razao:    newCompanie.Razao,
 		Cpf_cnpj: newCompanie.Cpf_cnpj,

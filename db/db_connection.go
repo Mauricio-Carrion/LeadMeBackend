@@ -13,7 +13,7 @@ import (
 )
 
 type User struct {
-	Uuid     uuid.UUID
+	Uuid     string
 	Name     string
 	Email    string
 	Password string
@@ -25,7 +25,7 @@ type User struct {
 }
 
 type Companie struct {
-	Uuid     uuid.UUID `gorm:"primaryKey"`
+	Uuid     string `gorm:"primaryKey"`
 	Name     string
 	Razao    string
 	Cpf_cnpj string

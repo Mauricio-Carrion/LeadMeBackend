@@ -9,18 +9,9 @@ import (
 
 	"github.com/dgrijalva/jwt-go"
 	"github.com/gin-gonic/gin"
-	"github.com/google/uuid"
 	"github.com/joho/godotenv"
 )
 
-type UserClaim struct {
-	jwt.Claims
-	Uuid  uuid.UUID
-	Email string
-	Name  string
-	Admin bool
-	Companie_uuid uuid.UUID
-}
 
 func AuthMiddleware() gin.HandlerFunc {
 
@@ -65,7 +56,14 @@ func AuthMiddleware() gin.HandlerFunc {
 					c.Abort()
 					return
 				}
-
+				
+				c.Keys = map[string]interface{ }{
+					"uuid": claims["uuid"],
+					"email": claims["email"],
+					"name": claims["name"],
+					"admin": claims["admin"],
+					"companie_uuid": claims["companie_uuid"],
+				}
         c.Next()
     }
 }

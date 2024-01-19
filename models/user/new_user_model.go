@@ -16,7 +16,7 @@ func NewUserModel(newUser *types.NewUser) ( *gorm.DB, error) {
 	}
 
 	result := db.DBConnection().Create(&db.User{
-		Uuid:     uuid.New(),
+		Uuid:     uuid.New().String(),
 		Name:     newUser.Name,
 		Email:    newUser.Email,
 		Password: hashedPassword,

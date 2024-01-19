@@ -19,7 +19,8 @@ func CreateWhatsmeowContainer() (*sqlstore.Container ){
 		configs.GetDB().User, 
 		configs.GetDB().Password, 
 		configs.GetDB().Database), 
-		dbLog)
+		dbLog, )
+
 	
 	if err != nil {
 		log.Fatal(err)

@@ -2,7 +2,6 @@ package user
 
 import (
 	"errors"
-	"fmt"
 
 	"github.com/Mauricio-Carrion/LeadMeBackend/db"
 	"github.com/Mauricio-Carrion/LeadMeBackend/types"
@@ -12,8 +11,6 @@ func LoginUserModel(login *types.LoginData) (*types.SelectUser, error) {
 	var result types.User
 	
 	queryResult := db.DBConnection().Where("email = ?", login.Email).Find(&result)
-
-	fmt.Println(result)
 
 	if queryResult.Error != nil {
 		return nil, queryResult.Error
