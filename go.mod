@@ -2,10 +2,7 @@ module github.com/Mauricio-Carrion/LeadMeBackend
 
 go 1.21.1
 
-require (
-	github.com/gin-gonic/gin v1.9.1
-	github.com/mdp/qrterminal/v3 v3.2.0
-)
+require github.com/gin-gonic/gin v1.9.1
 
 require (
 	filippo.io/edwards25519 v1.0.0 // indirect
@@ -40,6 +37,7 @@ require (
 	github.com/leodido/go-urn v1.2.4 // indirect
 	github.com/lib/pq v1.10.9
 	github.com/mattn/go-isatty v0.0.20 // indirect
+	github.com/mdp/qrterminal/v3 v3.2.0
 	github.com/modern-go/concurrent v0.0.0-20180306012644-bacd9c7ef1dd // indirect
 	github.com/modern-go/reflect2 v1.0.2 // indirect
 	github.com/pelletier/go-toml/v2 v2.0.8 // indirect
