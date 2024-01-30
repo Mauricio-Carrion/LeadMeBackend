@@ -8,9 +8,9 @@ import (
 )
 
 func LoginUserModel(login *types.LoginData) (*types.SelectUser, error) {
-	var result types.User
+	var result types.UserResponse
 	
-	queryResult := db.DBConnection().Where("email = ?", login.Email).Find(&result)
+	queryResult := db.DBConnection().Model(&db.User{}).Where("email = ?", login.Email).Find(&result)
 
 	if queryResult.Error != nil {
 		return nil, queryResult.Error

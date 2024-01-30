@@ -20,6 +20,13 @@ func Login(router *gin.Engine) {
 		data, err := user.LoginUserController(&newLogin)
 
 		if err != nil {
+
+			if err.Error() == "invalid credentials" || err.Error() == "email and password are required" {
+				ctx.JSON(401, gin.H{
+					"message": err.Error(),
+				})
+			}
+
 			ctx.JSON(400, gin.H{
 				"message": err.Error(),
 			})

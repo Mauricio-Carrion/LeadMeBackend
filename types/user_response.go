@@ -2,7 +2,7 @@ package types
 
 import "github.com/google/uuid"
 
-type User struct {
+type UserResponse struct {
 	Uuid string
 	Name string
 	Email string
