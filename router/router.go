@@ -5,10 +5,10 @@ import (
 
 	"github.com/Mauricio-Carrion/LeadMeBackend/auth"
 	"github.com/Mauricio-Carrion/LeadMeBackend/configs"
+	"github.com/Mauricio-Carrion/LeadMeBackend/routes"
 
 	"time"
 
-	"github.com/Mauricio-Carrion/LeadMeBackend/routes"
 	"github.com/gin-contrib/cors"
 	"github.com/gin-gonic/gin"
 )
@@ -34,5 +34,6 @@ func Router() {
 	routes.CreateUser(router)
 	routes.CreateCompanie(router)
 	routes.GetJid(router)
+	routes.GetContacts(router)
 	router.Run(fmt.Sprintf(":%s", configs.GetServerPort()))
 }

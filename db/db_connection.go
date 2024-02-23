@@ -44,7 +44,6 @@ func DBConnection() *gorm.DB {
   
 	if err != nil {
     log.Fatal("failed to connect database")
-
   }
 
 	db.AutoMigrate(
